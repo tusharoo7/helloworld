@@ -1,0 +1,44 @@
+<ion-header>
+
+   
+
+  <ion-navbar>
+    <ion-title>My Profile</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="profile" fullscreen="true">	
+		<ion-list class="login_form">
+	  <ion-label stacked>First Name</ion-label>
+		  <ion-item>
+		    <ion-input type="text" laceholder="Enter first name" [(ngModel)]="user.fname" #firstName></ion-input>
+		  </ion-item>
+	  <ion-label stacked>Last Name</ion-label>
+		  <ion-item>
+		    <ion-input type="text" placeholder="Enter last name" [(ngModel)]="user.lname" #lastName></ion-input>
+		  </ion-item>		  
+	  <ion-label stacked>Email</ion-label>
+		  <ion-item>
+		    <ion-input type="email" placeholder="Enter email" [(ngModel)]="user.email" disabled></ion-input>
+		  </ion-item> 
+	  <ion-grid class="mobile_area">
+		  	<ion-row>
+		  		<ion-col col-3>
+		  			<ion-label stacked>Code</ion-label>      	  			
+					  <ion-item>
+						<ion-input type="tel" placeholder="" [(ngModel)]="user.isd"></ion-input>
+					  </ion-item>
+		  		</ion-col>
+		  		<ion-col col-9>
+		  			<ion-label stacked>Mobile</ion-label>      	  			     	  
+					  <ion-item>
+						<ion-input type="tel" placeholder="Enter mobile number" [(ngModel)]="user.mobile" #mobile maxlength="15"></ion-input>
+					  </ion-item>
+		  		</ion-col>
+		  	</ion-row>
+	   </ion-grid>      
+		</ion-list>
+		<div style="text-align: center;">
+			<button ion-button color="danger" round (click)="actionUpdateProfile()" class="update_btn">UPDATE PROFILE</button>
+			<button ion-button color="danger" round (click)="goToChangePassword()" class="change_pass">CHANGE PASSWORD</button>
+		</div>	
+</ion-content>

@@ -1,0 +1,50 @@
+<!--
+  Generated template for the SearchWorshipResultPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-menu [content]="mycontent">
+    <ion-content>
+      <ion-list>
+        <ion-item menuClose detail-none>Close Menu</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  
+  <ion-navbar>
+    <ion-title></ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="goToFilterPage()">
+            <ion-icon name="options" color="white"></ion-icon>        	
+          </button>
+          <button ion-button icon-only (click)="goToPlaceListMapPage()">        	
+            <ion-icon name="pin" color="white"></ion-icon>
+          </button>
+      </ion-buttons>  
+  
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="placelist">
+
+  <ion-grid [virtualScroll]="searchResultList" approxItemHeight="100px">
+    <ion-row *virtualItem="let data; let i= index" (click)="getpropertydetails(i)" class="add_block">
+      <ion-col col-3>
+        <ion-img [src]="data.image || 'assets/imgs/no-image.png'"></ion-img>
+      </ion-col>
+      <ion-col col-9>
+        <h2 class="list_heading">{{data.title}}</h2>
+		    <p>{{data.address}}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+ 
+ 
+        
+</ion-content>

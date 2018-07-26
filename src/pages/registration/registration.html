@@ -1,0 +1,58 @@
+<ion-header class="header">
+    <ion-navbar>
+      <ion-title>Sign Up</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  
+  <ion-content padding class="home_bg">
+  
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12 class="logo">
+          <div text-center><img src="assets/imgs/logo.png" ></div>
+      </ion-col>
+    </ion-row>
+    <ion-row> 
+      <ion-col col-12 class="logo">
+          <form (ngSubmit)="registrationForm()">
+      <ion-list class="login_form">
+        <ion-label stacked> First Name</ion-label>
+        <ion-item>
+            <ion-input type="text" [(ngModel)]="user.fname" name="Userfname" placeholder="First Name"></ion-input>
+        </ion-item>
+        <ion-label stacked> Last Name</ion-label>
+        <ion-item>
+            <ion-input type="text" [(ngModel)]="user.lname" name="Userlname" placeholder="Last Name"></ion-input>
+        </ion-item>
+        <ion-label stacked>Email</ion-label>
+        <ion-item>
+            <ion-input type="text" [(ngModel)]="user.email" name="Useremail" placeholder="Email Id"></ion-input>
+        </ion-item>
+        <ion-label stacked>ISD Code</ion-label>
+        <ion-item>
+        <ion-input type="number" [(ngModel)]="user.isd" name="Userisd" placeholder="ISD code here"></ion-input>
+        </ion-item>
+        <ion-label stacked>Mobile</ion-label>
+        <ion-item>
+        <ion-input type="number" [(ngModel)]="user.mobile" name="Usermobile" placeholder="Mobile number here" ></ion-input>
+        </ion-item>
+        <ion-label stacked>Password</ion-label>
+        <ion-item>
+            <ion-input type="password" [(ngModel)]="user.password" name="Username"></ion-input>
+        </ion-item>
+        <!-- <ion-label stacked>Confirm Password</ion-label>
+        <ion-item>
+            <ion-input type="password" [(ngModel)]="user.cnf_password" name="Password"></ion-input>
+        </ion-item> -->
+      </ion-list>
+  
+      <div style="text-align: center;">
+        <button ion-button color="danger" round type="submit" class="login_btn">SIGN UP</button>
+      </div>
+    </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  </ion-content>
+  

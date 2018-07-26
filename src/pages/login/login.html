@@ -1,0 +1,46 @@
+<ion-header class="header">
+    <ion-navbar>
+      <ion-title>Login</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  
+  <ion-content padding class="home_bg">
+   // ccc
+    <ion-grid>
+      <ion-row>
+        <ion-col col-12 class="logo">
+            <div text-center><img src="assets/imgs/logo.png" ></div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+            <form (ngSubmit)="loginForm()">
+            <ion-list class="login_form">
+              <ion-label stacked>Email</ion-label>
+              <ion-item>
+                  <ion-input type="text" [(ngModel)]="user.loginfield" name="Username"></ion-input>
+              </ion-item>
+              <ion-label stacked>Password</ion-label>
+              <ion-item>
+                  <ion-input type="password" [(ngModel)]="user.password" name="Password"></ion-input>
+              </ion-item>
+            </ion-list>
+  
+            <div style="text-align: center;">
+                <button ion-button color="danger" type="submit"  class="login_btn">LOGIN</button>
+             
+            </div>
+            <div style="text-align: center;">
+              <button ion-button color="danger" round (click)="forgot_password()" class="forgot_btn">FORGOT PASSWORD</button>
+            </div>
+            <div style="text-align: center;">
+              <button ion-button color="danger" round (click)="registration()" class="sign_btn">SIGN UP</button>
+            </div>
+          </form>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  
+  </ion-content>
+  

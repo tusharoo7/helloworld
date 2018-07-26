@@ -1,0 +1,18 @@
+page-search-worship-result {
+    .grid{ padding: 0;}
+    .placelist{
+      .add_block{ margin: 0; padding: 0; border-bottom: 1px solid #c7c7c7;
+        [col-9]{ padding-right: 15px !important; padding-top: 15px; padding-bottom: 15px;}
+        [col-3]{ padding-left: 15px !important; padding-top: 15px; padding-bottom: 15px;}
+        .list_heading{ margin: 0; padding: 0; color:#dd0000; font-size: 600 !important; font-size: 18px;}
+        p{ margin: 0; padding:10px 0 0 0; color:#333; }
+        img{ margin: 0; padding: 0; border-radius:$border-radius5;}
+        ion-img{border-radius:$border-radius5; contain: none; max-height: 83px;}
+      }
+      .nodata{ margin: 15px; padding: 15px; background: #e3e3e3; border-radius: $border-radius5;
+        h2{ font-size: 15px; font-weight: 600; padding: 0; margin: 0;}
+      }
+    }
+}
+
+

@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>Prayer</ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-content padding class="sendprayer">
+    <div>
+      <h2 class="list_heading">Prayer for the {{searchdata.title}}</h2>
+  
+      <ion-list class="login_form">
+        <ion-item>
+            <ion-textarea placeholder="Enter your prayer" [(ngModel)]="prayer_content" name="Userfname" rows="15" cols="50"></ion-textarea>
+        </ion-item>
+      </ion-list>
+  
+      <div text-center>
+        <button ion-button color="danger" (click)="send_prayer()" round>SEND PRAYER</button>
+      </div>
+  
+    </div>
+  </ion-content>

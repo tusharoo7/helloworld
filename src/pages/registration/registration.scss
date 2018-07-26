@@ -1,0 +1,18 @@
+page-registration {
+    .home_bg{
+		background: url(../assets/imgs/home_page_bg.png) no-repeat; background-size: cover;
+    .logo{ margin-top: 5%;
+			img{ width:144px; height: 145px;}
+			.location{margin-top: 15px;
+				img{ width:44px; height: 64px;}
+			}
+		}
+    .login_form{ margin: 0 0 20px 0; padding: 0;
+      ion-label{ color:#ff473d; margin-bottom: 5px;}
+    }
+    .button{ padding: 25px 60px !important; background: $btn_color; width:100%;
+  		.button-inner{font-weight: 600;}
+  	}
+  }
+
+}

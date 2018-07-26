@@ -1,0 +1,10 @@
+page-nointernet {
+  .nointernet{ margin: 0;
+    .button{ padding: 25px 60px !important; background: $btn_color; width:auto;
+  		.button-inner{font-weight: 600;}
+  	}
+    img{ width:35px; height: 28px;}
+    .padding-top50{ padding-top: 50%;}
+    h2{margin-bottom: 20px;}
+  }
+}

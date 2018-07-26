@@ -1,0 +1,19 @@
+page-prayer-in-a-church {
+    .sendprayer{
+        margin: 0; padding:0;
+        .list_heading{ margin: 0; padding: 0; color:#dd0000; font-weight: 500 !important ; margin-bottom:15px;}
+        .login_form{ margin: 0 0 20px 0; padding: 0;
+          ion-label{margin-top: 0; color:#ff473b; }
+          ion-item{ background:#a8a8a8 !important; margin-bottom: 5px;}
+    
+          .mobile_area{ margin-top: 0; padding: 0;
+            [col-3]{padding-left: 0 !important;}
+            [col-9]{padding-right: 0 !important;}
+          }
+        }
+    
+        .button{ padding: 25px 60px !important; background: $btn_color; width:100%;
+          .button-inner{font-weight: 600;}
+        }
+      }
+}

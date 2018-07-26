@@ -1,0 +1,59 @@
+<!--
+  Generated template for the ItemDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+<ion-header>
+    <ion-navbar>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="pointPlaceInGoogleMap()">
+            <ion-icon name="pin" color="white"></ion-icon>
+          </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+
+<ion-content padding class="page_details">
+    <div text-right (click)="sharePlace()" class="share">
+        <!-- <ion-icon end="" name="share" role="img" class="icon icon-md ion-md-share" aria-label="share" ng-reflect-name="share"></ion-icon> -->
+        <img src="assets/imgs/share_icon.png" >
+      </div>
+
+      <div class="details_heading">
+          <h2>{{detailsData.title}}</h2>
+        </div>
+
+        <div text-center class="details_img">
+            <ion-img center [src]="detailsData.image"></ion-img>
+          </div>
+
+           <div class="details_cont">
+              <ion-grid>
+                <ion-row>
+                  <ion-col col-2 text-right><img src="assets/imgs/details_location_icon.png" ></ion-col>
+                  <ion-col col-10><span class="info_txt">{{detailsData.address}}</span></ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col col-2 text-right><img src="assets/imgs/call_icon.png" ></ion-col>
+                  <ion-col col-10><a *ngIf="detailsData.contact_number!=''" href="tel:{{detailsData.contact_number}}"><span class="info_txt">{{detailsData.contact_number}}</span></a><span *ngIf="detailsData.contact_number==''">NA</span></ion-col>
+                </ion-row>
+                
+                 <ion-row>
+                    <ion-col col-2 text-right><img src="assets/imgs/website_link.png" ></ion-col>
+                    <ion-col col-10><span class="info_txt" *ngIf="detailsData.website!=''" (click)="visitWebsite(detailsData.website)">{{detailsData.website}}</span><span *ngIf="detailsData.website==''">NA</span></ion-col>
+                </ion-row>
+              </ion-grid>
+            </div> 
+
+            <div text-center class="btn_area">
+                <button ion-button round (click)="light_a_candel()" class="lighta_candel">LIGHT A CANDLE</button>
+                <button ion-button round (click)="prayer_in_a_church()" class="prayer_btn">PRAYER IN THIS {{detailsData.worship_type | uppercase}}</button>
+                <button ion-button round (click)="donte_church()" class="donate_btn">DONATE IN THIS {{detailsData.worship_type | uppercase}}</button>
+              </div>
+
+   
+   
+  </ion-content>
