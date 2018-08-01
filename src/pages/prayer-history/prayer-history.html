@@ -1,18 +1,41 @@
-<!--
-  Generated template for the PrayerHistoryPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
-    <ion-title>prayer-history</ion-title>
+    <ion-title>Prayer History</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="prayer_history">
+    <div *ngIf="priviousPrayerHistory?.length > 0 else elsetag">
+
+        <div class="block"  *ngFor ="let data of priviousPrayerHistory">
+            <ion-grid>
+              <ion-row>
+                <ion-col col-8 class="block_heading">
+                    {{data.worship_place}}
+                  <div class="sub_txt"> {{data.prayer_message}}</div>
+                </ion-col>
+                <ion-col col-4>
+                  <div class="date"> {{data.date}}</div>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div> 
+    </div>
+   
 
 </ion-content>
+<ng-template #elsetag>
+    <div class="block"  >
+        <ion-grid>
+          <ion-row>
+            <ion-col col-8 class="block_heading">
+              No Prayer History Found
+            </ion-col>
+            
+          </ion-row>
+        </ion-grid>
+      </div>
+    <ng-template>

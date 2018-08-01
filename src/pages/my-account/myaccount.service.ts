@@ -25,4 +25,16 @@ export class Myaccount {
   let api_url = "changePassword";
   return this.apiservice.post_genreral(api_url, JSON.stringify(data));
  }
+
+ getpryerhistory(data)
+ {
+  let api_url = "prayerHistory";
+  return this.apiservice.post_genreral(api_url, JSON.stringify(data));
+ }
+
+ addsuggestedworshipplace(data)
+ {
+   let api_url = "suggestWorshipPlace";
+  return this.apiservice.post_genreral(api_url, JSON.stringify(data));
+ }
 }

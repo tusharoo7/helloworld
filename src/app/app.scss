@@ -14,22 +14,6 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
-// http://ionicframework.com/docs/theming/
-
-
-// App Global Sass
-// --------------------------------------------------
-// Put style rules here that you want to apply globally. These
-// styles are for the entire app and not just one component.
-// Additionally, this file can be also used as an entry point
-// to import other Sass files to be included in the output CSS.
-//
-// Shared Sass variables, which can be used to adjust Ionic's
-// default Sass variables, belong in "theme/variables.scss".
-//
-// To declare rules for a specific mode, create a child rule
-// for the .md, .ios, or .wp mode classes. The mode class is
-// automatically applied to the <body> element in the app.
 
 /*font import start*/
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
@@ -43,12 +27,14 @@ $border-radius5: 5px;
 $border-radius15: 15px;
 $border-radius50: 50%;
 $border-radius05: 5px;
+$border-radius8: 8px;
 $red_btn:#d01f26;
 $white_color:#fff;
 $anchorlink:#1f1f1f;
 $anchorlinkHover:#35c1d2;
 $btn_color:#d01f27;
 $red_color:#f1030c;
+$box-shadow:0 2px 2px #b7b7b7;
 
 ion-app.md,
 ion-app.ios {
@@ -130,9 +116,15 @@ button{ opacity: 1;}
 }
 .alert-md .alert-button, .alert-ios .alert-button{ background: #d01f27; color:#fff;}
 
+.list-md .item-input:last-child{ border-bottom:none;}
+
+.scroll-content{padding-bottom: 0 !important;}
+
+.list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child, .list-md .item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child, .list-ios .item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child, .list-ios .item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child{box-shadow: none !important; -webkit-box-shadow:none !important;}
+
 /* menu css start*/
 .menu{margin: 0; padding: 0; background: #ede9e9;
-  .menu_bg{background: url(assets/imgs/menu_bg.png) no-repeat; background-size: cover; height: 150px; text-align: center; padding: 28px 0;
+  .menu_bg{background: url(../assets/imgs/menu_bg.png) no-repeat; background-size: cover; height: 150px; text-align: center; padding: 28px 0;
     img{ width:97px; height: 93px;}
   }
   .list{ margin-bottom: 0;}
@@ -140,6 +132,21 @@ button{ opacity: 1;}
     .label{color:#333;}
   }
   .item-ios[detail-push] .item-inner, button.item-ios:not([detail-none]) .item-inner, a.item-ios:not([detail-none]) .item-inner, .item-md[detail-push] .item-inner, button.item-md:not([detail-none]) .item-inner, a.item-md:not([detail-none]) .item-inner{ background: none;}
+  ion-list{ margin: 0; padding: 0;
+  .item-ios, .item-md { padding-left: 0 !important;
+    .item-inner{ padding-right: 0 !important;
+      .label {
+        img{ width:25px; height: auto; margin-left:20px; position: relative; top:4px; margin-right: 10px;}
+      }
+    }
+  }
 
+  }
 }
 /* menu css end*/
+
+/*19-07-2018*/
+.label-ios, .label-md {
+    margin: 5px 8px 5px 0 !important;
+}
+/*19-07-2018*/

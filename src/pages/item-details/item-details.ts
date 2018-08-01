@@ -60,7 +60,7 @@ export class ItemDetailsPage {
        }
       else
       {
-        this.navCtrl.push(DonateThisChurchPage );
+        this.navCtrl.push(DonateThisChurchPage ,{placeData :this.detailsData} );
       }
   }
 

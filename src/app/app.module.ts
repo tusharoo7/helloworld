@@ -26,13 +26,20 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
     import{PaymentHistoryPage } from '../pages/payment-history/payment-history';
     import{NointernetPage } from '../pages/nointernet/nointernet';
     import{ChangepasswordPage} from '../pages/changepassword/changepassword';
-import{ForgotPasswordPage} from '../pages/forgot-password/forgot-password';
+    import{AbouttusPage} from '../pages/abouttus/abouttus';
+    import{ContactusPage} from '../pages/contactus/contactus';
+    import{ForgotPasswordPage} from '../pages/forgot-password/forgot-password';
 import { HttpModule } from '@angular/http';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { Network } from '@ionic-native/network';
 import { MyaccountProvider } from '../providers/myaccount/myaccount';   
-    
+import { Camera, CameraOptions } from '@ionic-native/camera';  
+import { Geolocation } from '@ionic-native/geolocation';
+import { PayPal } from '@ionic-native/paypal';
+
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+import { File } from '@ionic-native/file';
 @NgModule({
   declarations: [
     MyApp,
@@ -55,7 +62,9 @@ import { MyaccountProvider } from '../providers/myaccount/myaccount';
      MyAccountPage,
      PaymentHistoryPage,
      NointernetPage,
-     ChangepasswordPage
+     ChangepasswordPage,
+     AbouttusPage,
+     ContactusPage
     
   ],
   imports: [
@@ -86,7 +95,9 @@ import { MyaccountProvider } from '../providers/myaccount/myaccount';
      MyAccountPage,
      PaymentHistoryPage,
      NointernetPage,
-     ChangepasswordPage
+     ChangepasswordPage,
+     AbouttusPage,
+     ContactusPage
   ],
   providers: [
     StatusBar,
@@ -95,6 +106,11 @@ import { MyaccountProvider } from '../providers/myaccount/myaccount';
     NativeGeocoder,
     SocialSharing,
     Network,
+    Camera,
+    Geolocation,
+    FileTransfer,
+    File,
+    PayPal, 
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     MyaccountProvider
   ]

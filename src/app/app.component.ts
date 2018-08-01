@@ -13,6 +13,8 @@ import{AddWorshipPlacePage} from '../pages/add-worship-place/add-worship-place';
 import{MyAccountPage} from '../pages/my-account/my-account';
 import{PaymentHistoryPage } from '../pages/payment-history/payment-history';
 import{NointernetPage } from '../pages/nointernet/nointernet';
+import{AbouttusPage} from '../pages/abouttus/abouttus';
+    import{ContactusPage} from '../pages/contactus/contactus';
 import { ApiService } from '../services/api/api.service';
 import { GlobalService } from './global.service';
 import {Md5} from 'ts-md5/dist/md5';
@@ -40,7 +42,8 @@ export class MyApp {
            { title: 'Terms & Condition', component: TermsAndConditionPage },
           { title: 'Privacy Policy', component: PrivacyPolicyPage },
           { title: 'Login', component: LoginPage },
-          
+          { title: 'About Us', component: AbouttusPage },
+          { title: 'Contact Us', component: ContactusPage }
         ];
        }
       else
@@ -53,7 +56,8 @@ export class MyApp {
           { title: 'Payment History', component: PaymentHistoryPage },
           { title: 'Terms & Condition', component: TermsAndConditionPage },
           { title: 'Privacy Policy', component: PrivacyPolicyPage },
-          
+          { title: 'About Us', component: AbouttusPage },
+          { title: 'Contact Us', component: ContactusPage },
           { title: 'Logout', component: null }
         ];
       }

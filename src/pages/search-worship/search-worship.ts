@@ -1,7 +1,7 @@
 import { Component, NgZone  } from '@angular/core';
 
 import { HttpClient} from '@angular/common/http';
-import { HelperService } from '../../services/helper/helper.service';
+
 //import { Searchworship } from './searchworship.service';
 import { IonicPage, NavController, NavParams,LoadingController,ToastController } from 'ionic-angular';
 import { SearchWorshipResultPage } from '../search-worship-result/search-worship-result';
@@ -9,6 +9,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 declare var google;
 import { ApiService } from '../../services/api/api.service';
 import { Searchworship } from './searchworship.service';
+import { HelperService } from '../../services/helper/helper.service';
 /**
  * Generated class for the SearchWorshipPage page.
  *

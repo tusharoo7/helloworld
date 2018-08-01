@@ -7,31 +7,45 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title></ion-title>
+    <ion-title>Donate</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-    <ion-header>church name</ion-header>
-    <ion-item>
-        <ion-label color="primary" floating>Floating Label</ion-label>
-        <ion-input></ion-input>
-      </ion-item>
-      <ion-item>
-          <ion-label color="primary" floating>Floating Label</ion-label>
-          <ion-input></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label color="primary" floating>Floating Label</ion-label>
-            <ion-input></ion-input>
-          </ion-item>
+<ion-content padding class="donationpage">
+   
+    <h2 class="list_heading"> {{placename}}</h2>
+    <ion-list class="login_form">
+     
 
-          <ion-item>
-              <ion-label color="primary" floating>Floating Label</ion-label>
-              <ion-input></ion-input>
-            </ion-item>
+    <ion-label stacked>Name*</ion-label>
+    <ion-item>
+      <ion-input type="text" placeholder="Enter Your name" [(ngModel)]="userinfo.name"></ion-input>
+    </ion-item>
+
+    <ion-label stacked>Email*</ion-label>
+    <ion-item>
+      <ion-input type="text" placeholder="Enter Your Email" [(ngModel)]="userinfo.email"></ion-input>
+    </ion-item>
+
+    <ion-label stacked>Mobile*</ion-label>
+    <ion-item>
+      <ion-input type="number" placeholder="Mobile Number" [(ngModel)]="userinfo.mobile"></ion-input>
+    </ion-item>
+    <ion-label stacked>Amount*</ion-label>
+    <ion-item class="auth-time">
+      <ion-input type="number" [(ngModel)]="amount"   side="left"></ion-input>
+      <ion-select [(ngModel)]="currency">
+        <ion-option value="USD" selected>$ USD</ion-option>
+        <ion-option value="AUD">$ AUD</ion-option>
+      
+      </ion-select>
+    </ion-item>
+    </ion-list>
+   
           
-    <ion-item><ion-item><button ion-button color="secondary" round (click)="submit_prayer()">Donate Now</button></ion-item></ion-item>
+    <div text-center class="btn_area">
+      <button ion-button round (click)="donatenow()">Donate Now</button>
+    </div> 
 </ion-content>

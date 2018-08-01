@@ -1,18 +1,104 @@
-<!--
-  Generated template for the AddWorshipPlacePage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>add-worship-place</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+      <ion-title>Add Worship Place</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding class="addworshipplace">
+  
+    <div class="banner_area">
+    <img [src]="placeInfo.image" alt="" *ngIf="isImageSelected">
+    <div class="add_img_btn">
+      <button ion-button full class="upload_btn" (click)="presentActionSheet()">
+        Upload Image <img src="assets/imgs/upload_project.png" alt="" />
+      </button>
+    </div>
+  </div> 
+  
+  <ion-list class="login_form">
 
-</ion-header>
+       <div class="location">
+      <ion-label stacked>Location*</ion-label>
+      <ion-item>
+        <ion-input id="addPlacesGooglePlaces" type="text" placeholder="Enter location" [(ngModel)]="placeInfo.location" #input (blur)="checkIsSuggestionSelected()"></ion-input>
+      </ion-item>
+      <div class="close" *ngIf="placeInfo.location" (click)="clearGoogleAutocomplete()"><ion-icon name="close"></ion-icon></div>
+    </div>
+  <ion-label stacked>Name*</ion-label>
+    <ion-item>
+      <ion-input type="text" placeholder="Enter name" [(ngModel)]="placeInfo.name"></ion-input>
+    </ion-item>
+
+    <ion-label stacked>Type*</ion-label>
+    <ion-item>
+      <ion-label class="type">Select Type of Worship</ion-label>
+      <ion-select [(ngModel)]="placeInfo.type">        
+        <ion-option *ngFor="let data of placeCat" [value]="data.id">{{data.title}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-label stacked>Contact Number</ion-label>
+    <ion-item>
+      <ion-input placeholder="Enter a contact number" [(ngModel)]="placeInfo.phone" type="tel"></ion-input>
+    </ion-item>
 
 
-<ion-content padding>
+    <ion-label stacked>Website</ion-label>
+    <ion-item>
+      <ion-input placeholder="Enter website" [(ngModel)]="placeInfo.website" type="url"></ion-input>
+    </ion-item>
 
-</ion-content>
+
+    <ion-label stacked>Street Number</ion-label>
+    <ion-item>
+      <ion-input placeholder="Enter street number" [(ngModel)]="placeInfo.streetnumber"></ion-input>
+    </ion-item>
+
+
+    <ion-label stacked>Street</ion-label>
+    <ion-item>
+      <ion-input placeholder="Enter street" [(ngModel)]="placeInfo.street"></ion-input>
+    </ion-item>
+
+
+    <ion-label stacked>City</ion-label>
+    <ion-item>
+      <ion-input placeholder="Enter city" [(ngModel)]="placeInfo.city"></ion-input>
+    </ion-item>
+
+
+    <ion-label stacked>Region/Municipality</ion-label>
+    <ion-item>
+      <ion-input placeholder="Enter region/municipality" [(ngModel)]="placeInfo.region"></ion-input>
+    </ion-item>
+
+
+    <ion-label stacked>Province/County/District</ion-label>
+    <ion-item>
+      <ion-input placeholder="Enter province/county/district" [(ngModel)]="placeInfo.province"></ion-input>
+    </ion-item>
+
+
+    <ion-label stacked>State*</ion-label>
+    <ion-item>
+      <ion-input placeholder="Enter state" [(ngModel)]="placeInfo.state"></ion-input>
+    </ion-item>
+
+
+    <ion-label stacked>Postal Code*</ion-label>
+    <ion-item>
+      <ion-input placeholder="Enter postal code" [(ngModel)]="placeInfo.postalcode" type="number"></ion-input>
+    </ion-item>
+
+
+</ion-list>
+  
+  
+  <div text-center class="btn_area">
+    <button ion-button round (click)="addWorshipPlace()">Submit</button>
+  </div> 
+  
+  </ion-content>

@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,LoadingController, } from 'ionic-angular';
 
 import { ApiService } from '../../services/api/api.service';
-import { Termsandcondition } from './termsandcondition.service';
+import { Aboutus } from './aboutus.service';
 import { HelperService } from '../../services/helper/helper.service';
 
+
+
 /**
- * Generated class for the TermsAndConditionPage page.
+ * Generated class for the AbouttusPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -14,24 +16,28 @@ import { HelperService } from '../../services/helper/helper.service';
 
 @IonicPage()
 @Component({
-  selector: 'page-terms-and-condition',
-  templateUrl: 'terms-and-condition.html',
-  providers :[HelperService,Termsandcondition,ApiService]
+  selector: 'page-abouttus',
+  templateUrl: 'abouttus.html',
+  providers :[HelperService,Aboutus,ApiService]
 })
-export class TermsAndConditionPage {
-  cmscontent : any;
-  isDataLoaded: any;
-  constructor(public terms_service :Termsandcondition ,public helperService : HelperService , public navCtrl: NavController, public navParams: NavParams) {
+export class AbouttusPage {
+cmscontent : any;
+isDataLoaded: any;
+  constructor(public loadingCtrl: LoadingController, public aboutusservice :Aboutus ,public helperService : HelperService , public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
+    const loader = this.loadingCtrl.create({
+      content: "Please wait...",      
+    });
+    loader.present();
     let apiname = "base64:/76e6C2AzbbxmBYuVMmtjBTDwNWXa/vrHvtTIbzVkck=";
     let api_url = "cmsContent";
    let  auth_token = this.helperService.getAuth(apiname,api_url);
-    let cmsparam = {"auth_token" : auth_token , "version" :1 ,"key" :"term" }
+    let cmsparam = {"auth_token" : auth_token , "version" :1 ,"key" :"about" }
     //console.log(loginparam);
-    this.terms_service.get_termsdata(cmsparam).subscribe((resp) => {
-
+    this.aboutusservice.aboutsus(cmsparam).subscribe((resp) => {
+      loader.dismiss();
       if (resp.cmsContent.status==1){
         this.isDataLoaded = true;
        this.cmscontent = resp.cmsContent.details.desc;
@@ -44,7 +50,7 @@ export class TermsAndConditionPage {
      {
        this.helperService.sendalertmessage('bottom',"oops..! internal error occurred!");
     });
-    console.log('ionViewDidLoad TermsAndConditionPage');
-  }
+   }
 
+  
 }
