@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Payment Details</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+
+	<div class="details_heading">
+		<h2>{{paymentInfo.user}}</h2>
+	</div>
+
+	<div class="details_heading">
+		<h2>{{paymentInfo.worship_place}}/{{paymentInfo.worship_place_type}}</h2>
+	</div>
+
+	<div class="details_heading">
+		<p>{{paymentInfo.transaction_id}}</p>
+	</div>
+
+	<div class="details_heading">
+		<p>{{paymentInfo.currency}} {{paymentInfo.amount}}</p>
+	</div>
+  
+  <div class="details_heading">
+		<p>{{paymentInfo.date}}</p>
+	</div>
+
+</ion-content>
+

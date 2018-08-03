@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,LoadingController, } from 'ionic-angular';
 
-import { ApiService } from '../../services/api/api.service';
+import { ApitwoService } from '../../services/api/apitwo.service';
 import { Aboutus } from './aboutus.service';
 import { HelperService } from '../../services/helper/helper.service';
 
@@ -18,7 +18,7 @@ import { HelperService } from '../../services/helper/helper.service';
 @Component({
   selector: 'page-abouttus',
   templateUrl: 'abouttus.html',
-  providers :[HelperService,Aboutus,ApiService]
+  providers :[HelperService,Aboutus,ApitwoService]
 })
 export class AbouttusPage {
 cmscontent : any;

@@ -16,6 +16,9 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
     import { PlacefilterPage} from '../pages/placefilter/placefilter';
     import { PlacelistmapPage } from '../pages/placelistmap/placelistmap';
     import { LoginPage } from '../pages/login/login';
+    import {PaymentdetailsPage} from  '../pages/paymentdetails/paymentdetails';
+    import{PrayerdetailsPage} from '../pages/prayerdetails/prayerdetails';
+
     import { NativeGeocoder } from '@ionic-native/native-geocoder';
     import{RegistrationPage} from '../pages/registration/registration';
     import{TermsAndConditionPage} from '../pages/terms-and-condition/terms-and-condition';
@@ -64,7 +67,9 @@ import { File } from '@ionic-native/file';
      NointernetPage,
      ChangepasswordPage,
      AbouttusPage,
-     ContactusPage
+     ContactusPage,
+     PaymentdetailsPage,
+     PrayerdetailsPage
     
   ],
   imports: [
@@ -97,7 +102,9 @@ import { File } from '@ionic-native/file';
      NointernetPage,
      ChangepasswordPage,
      AbouttusPage,
-     ContactusPage
+     ContactusPage,
+     PaymentdetailsPage,
+     PrayerdetailsPage
   ],
   providers: [
     StatusBar,

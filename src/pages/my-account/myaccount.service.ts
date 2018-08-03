@@ -32,6 +32,12 @@ export class Myaccount {
   return this.apiservice.post_genreral(api_url, JSON.stringify(data));
  }
 
+ getpaymenthistory(data)
+ {
+  let api_url = "donationHistory";
+  return this.apiservice.post_genreral(api_url, JSON.stringify(data));
+ }
+
  addsuggestedworshipplace(data)
  {
    let api_url = "suggestWorshipPlace";

@@ -8,62 +8,37 @@
       
       
       <ion-content padding class="payment_history">
-      
-        <div class="block">
-          <ion-grid>
-            <ion-row>
-              <ion-col col-8 class="block_heading">
-                Cathedral of The Most Holy Rosary
-              </ion-col>
-              <ion-col col-4 text-right>
-                <div class="amount">$ 8.62 USD</div>
-                <div class="date">25-6-2018</div>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
+        <div *ngIf="priviousPaymentHistory?.length > 0 else elsetag">
+
+          <div class="block" *ngFor ="let data of priviousPaymentHistory , let i = index " (click)="get_paymentdetails(i)">
+            <ion-grid>
+              <ion-row>
+                <ion-col col-8 class="block_heading">
+                 {{data.worship_place}} <br/>
+                 [{{data.worship_place_type}}]
+                </ion-col>
+                <ion-col col-4 text-right>
+                  <div class="amount"> {{data.amount}} {{data.currency}}</div>
+                  <div class="date">{{data.date}}</div>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+
         </div>
+     
       
-        <div class="block">
-          <ion-grid>
-            <ion-row>
-              <ion-col col-8 class="block_heading">
-                Cathedral of The Most Holy Rosary
-              </ion-col>
-              <ion-col col-4 text-right>
-                <div class="amount">$ 8.62 USD</div>
-                <div class="date">25-6-2018</div>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-        </div>
-      
-        <div class="block">
-          <ion-grid>
-            <ion-row>
-              <ion-col col-8 class="block_heading">
-                Cathedral of The Most Holy Rosary
-              </ion-col>
-              <ion-col col-4 text-right>
-                <div class="amount">$ 8.62 USD</div>
-                <div class="date">25-6-2018</div>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-        </div>
-      
-        <div class="block">
-          <ion-grid>
-            <ion-row>
-              <ion-col col-8 class="block_heading">
-                Cathedral of The Most Holy Rosary
-              </ion-col>
-              <ion-col col-4 text-right>
-                <div class="amount">$ 8.62 USD</div>
-                <div class="date">25-6-2018</div>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-        </div>
-      
+        
       </ion-content>
-      
+      <ng-template #elsetag>
+        <div class="block"  >
+            <ion-grid>
+              <ion-row>
+                <ion-col col-8 class="block_heading">
+                  No Payment History Found
+                </ion-col>
+                
+              </ion-row>
+            </ion-grid>
+          </div>
+        <ng-template>

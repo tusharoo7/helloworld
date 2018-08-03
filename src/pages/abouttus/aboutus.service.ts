@@ -1,11 +1,11 @@
 import{ Injectable } from '@angular/core';
-import { ApiService } from '../../services/api/api.service';
+import { ApitwoService } from '../../services/api/apitwo.service';
 @Injectable()
 export class Aboutus {
 
     constructor(
       //private storageservice: StorageService,
-      private apiservice: ApiService
+      private apiservice: ApitwoService
       // private userService: UserService
     ) { }
   

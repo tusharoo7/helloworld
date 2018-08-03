@@ -10,7 +10,7 @@
 <ion-content padding class="prayer_history">
     <div *ngIf="priviousPrayerHistory?.length > 0 else elsetag">
 
-        <div class="block"  *ngFor ="let data of priviousPrayerHistory">
+        <div class="block"  *ngFor ="let data of priviousPrayerHistory ,let i = index " (click)="get_prayerdetails(i)">
             <ion-grid>
               <ion-row>
                 <ion-col col-8 class="block_heading">

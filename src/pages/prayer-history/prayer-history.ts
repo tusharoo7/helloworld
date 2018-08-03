@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams,LoadingController } from 'ionic-ang
 import { HelperService } from '../../services/helper/helper.service';
 import { ApiService } from '../../services/api/api.service';
 import { Myaccount } from '../my-account/myaccount.service'
+import {PrayerdetailsPage} from '../prayerdetails/prayerdetails'
 
 /**
  * Generated class for the PrayerHistoryPage page.
@@ -65,4 +66,11 @@ export class PrayerHistoryPage {
             
     }
   
+
+    get_prayerdetails(id)
+    {
+      let jsonData =  JSON.stringify(this.priviousPrayerHistory[id]);
+    this.navCtrl.push(PrayerdetailsPage, {clickedData : jsonData});
+    }
+
 }
